@@ -7,33 +7,69 @@
  */
 
 import React from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-  Button,
-  TouchableOpacity,
-  Alert,
-} from 'react-native';
+import {SafeAreaView, StyleSheet, ScrollView, View, Text, StatusBar, TouchableOpacity } from 'react-native';
+import { Header, LearnMoreLinks, DebugInstructions, ReloadInstructions, } from 'react-native';
 
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native';
+const Padrao = StyleSheet.create({
+  Container: {
+    flex: 1,
+    justifyContent: 'center',
+  },
+  Fundo: {
+    backgroundColor: 'grey',
+  },
+  Botao: {
+    marginTop: 30,
+    marginLeft: 10,
+    marginRight: 10,
+    borderWidth: 1,
+    paddingTop: 10,
+    height: 60,
+    borderStyle: 'solid',
+    borderColor: 'blue',
+    color: 'blue',
+    backgroundColor: 'powderblue',
+    shadowColor: '#000000',
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    shadowOffset: {width: 0, height: 2},
+    elevation: 5,
+  },
+  Secao: {
+    marginTop: 30,
+    marginLeft: 10,
+    marginRight: 10,
+    paddingTop: 10,
+    paddingHorizontal: 20,
+    paddingBottom: 10,
+    borderWidth: 1,
+    borderStyle: 'solid',
+    borderColor: 'red',
+    backgroundColor: 'powderblue',
+  },
+  Texto: {
+    textAlign: 'center',
+    fontSize: 24,
+    fontWeight: '600',
+    color: 'darkred',
+  },
+});
 
-import { Menu } from '../../pagina1/presentation';
+const AppPresentation = props => {
+  return (
+    <View style={Padrao.Container}>
+      <TouchableOpacity style={Padrao.Botao} onPress={props.TelaNova}>
+        <Text style={Padrao.Texto}>Menu Inicial</Text>
+      </TouchableOpacity>
+    </View>
+  );
+};
 
-function TelaNova() {
-  Alert.alert("Chamar Tela nova.");
-}
+export default AppPresentation;
+
 
 //const App: () => React$Node = () => {
+/*
 const AppPresentation = props => {
   return (
     <>
@@ -78,7 +114,7 @@ const AppPresentation = props => {
               </Text>
             </View>
            
-            <TouchableOpacity style={styles.containerButton} onPress={TelaNova}>
+            <TouchableOpacity style={styles.containerButton} onPress={props.TelaNova}>
               <Text style={styles.sectionTitle}>Menu Inicial</Text>
             </TouchableOpacity>
 
@@ -154,5 +190,4 @@ const styles = StyleSheet.create({
     textAlign: 'right',
   },
 });
-
-export default AppPresentation;
+*/

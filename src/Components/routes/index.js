@@ -1,30 +1,53 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 
 //--> Carramento do componentes de página.
-import { Inicial, Menu, Pagina1 } from '../../pages';
-//import Inicial from '../../pages/Inicial/index';
-//import Menu from '../../pages/Menu/index';
+import { Innocenti, Login } from '../../pages';
+//import Innocenti from '../../pages/Innocenti/Container';
+//import Login from '../../pages/Login/Container';
 //import Pagina1 from '../../pages/Pagina1/index';
 
-//--> Cria as rotas de navegação para as páginas do aplicativo.
 const AppStackNavigator = createStackNavigator({
-    PaginaHome: Inicial,
-    PaginaMenu: Menu,
-    PaginaPagina1: Pagina1 
+    PagInnocenti: {
+        screen: Innocenti,
+    },
+    PagLogin: {
+        screen: Login,
+    },
+}, {
+    initialRouteName: 'PagInnocenti',
+});
+
+const Routes = createAppContainer(AppStackNavigator);
+
+export default class App extends Component {
+    render() {
+        return <Routes />
+    }
+}
+
+
+/*
+//--> Cria as rotas de navegação para as páginas do aplicativo.
+const AppNavegacaoPrincipal = createStackNavigator({
+    PaginaHome: {
+        screen: Inicial,
+    },
+    PaginaMenu: {
+        screen: Menu,
+    },
+    PaginaPag1: {
+        screen: Pagina1,
+    },
 });
 
 //--> Define os grupos de rotas estáticas para serem usadas dependendo das chamadas das telas.
-const AppSwithNavigator = createSwitchNavigator(
-    {
-        App: AppStackNavigator,
-    },
-    {
-        initialRouteName: 'App'
-    }
-);
+const AppSwithNavigator = createSwitchNavigator({
+    App: AppNavegacaoPrincipal,
+    }, {
+    initialRouteName: 'App'
+});
 
-const Routes = createAppContainer(AppSwithNavigator);
-
-export { Routes };
+const Rotas = createAppContainer(AppSwithNavigator);
+*/

@@ -1,1 +1,0 @@
-export { default as Pagina1 } from './container';

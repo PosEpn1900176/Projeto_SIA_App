@@ -1,14 +1,13 @@
 /**
  * @format
  */
-import React from 'react';
 import {AppRegistry} from 'react-native';
 import {name as appName} from './app.json';
 
-//import App from './src/pages/App';
-//import {index as Inicio} from './src/pages/Inicial/index';
-import { Routes } from './src/Components/Routes';
+//import App from './src/pages/Inicial/Container/index';
+//import App from './src/pages/Innocenti/Container/index';
+//import App from './src/pages/Login/Container/index';
 
-const App = () => <Routes />
+import App from './src/Components/Routes/index';
 
 AppRegistry.registerComponent(appName, () => App);

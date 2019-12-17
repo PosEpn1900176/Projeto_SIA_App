@@ -1,10 +1,14 @@
 import React from 'react';
-
-import AppPresentation from '../presentation';
+import { Alert } from 'react-native';
+import AppPresentation from '../Presentation';
 
 const AppContainer = props => {
+    function handleTelaNova() {
+        Alert.alert("Chamar Tela nova.");
+    }
+
     return (
-        <AppPresentation></AppPresentation>
+        <AppPresentation TelaNova={handleTelaNova}></AppPresentation>
     );
 };
 
