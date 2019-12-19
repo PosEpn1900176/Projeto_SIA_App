@@ -16,7 +16,7 @@ const AppStackNavigator = createStackNavigator({
         screen: Login,
     },
 }, {
-    initialRouteName: 'PagInnocenti',
+    initialRouteName: 'PagLogin',
 });
 
 const Routes = createAppContainer(AppStackNavigator);

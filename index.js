@@ -1,5 +1,6 @@
 /**
  * @format
+ * git push -f --set-upstream SiaApp  master
  */
 import {AppRegistry} from 'react-native';
 import {name as appName} from './app.json';
